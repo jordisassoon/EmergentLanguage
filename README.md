@@ -92,7 +92,7 @@ The simulation relies on a JSON configuration file for specifying parameters. Be
 To run the simulation, you can use the following command:
 
 ```bash
-python main.py --config config.json --num_steps 100 --num_runs 10
+python main.py --config config.json --num_steps 10 --num_runs 10
 ```
 
 ### Command-Line Arguments:

@@ -50,7 +50,7 @@ class Simulation:
         ]
 
         # Initialize agents (nodes) based on community sizes
-        self.nodes = [Agent(i, None) for i in range(sum(community_sizes))]
+        self.nodes = [Agent(i, None, self.lr_upper, self.lr_lower) for i in range(sum(community_sizes))]
 
         # Create the graph with nodes and community structure
         self.graph = Graph(self.nodes, community_sizes, p_matrix)
@@ -214,6 +214,8 @@ class Simulation:
         # Update each node's language with the language of the reference node
         for i, node in enumerate(self.graph.nodes):
             node.update_language(reference_nodes[i].language.concept_map)
+
+        self.modify_edges(self.edge_add_prob, self.edge_del_prob)
 
         # Recompute global fitness after the update
         self.compute_global_fitness()

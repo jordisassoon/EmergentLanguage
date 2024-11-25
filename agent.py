@@ -2,10 +2,10 @@ import random
 
 
 class Agent:
-    def __init__(self, node_id, language):
+    def __init__(self, node_id, language, lr_upper_bound, lr_lower_bound):
         self.id = node_id
         self.language = language
-        self.lr = random.random()
+        self.lr = random.random() * (lr_upper_bound - lr_lower_bound) + lr_lower_bound
 
     def set_language(self, language):
         self.language = language
