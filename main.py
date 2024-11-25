@@ -263,7 +263,7 @@ if __name__ == "__main__":
 
     global_fitnesses = []
     conversions = []
-    group_counts = {1: 0, 2: 0, 3: 0, 4: 0}
+    group_counts = {1: 0, 2: 0, 3: 0, '4+': 0}
 
     for _ in tqdm.tqdm(range(args.num_runs)):
         # Run the simulation with the provided config and steps
@@ -272,7 +272,10 @@ if __name__ == "__main__":
         conversions.append(converged)
 
         if converged:
-            group_counts[groups_at_convergence] += 1
+            if groups_at_convergence >= 4:
+                group_counts['4+'] += 1
+            else:
+                group_counts[groups_at_convergence] += 1
 
     # Calculate the percentage of runs with fitness == 1.0
     fitness_1_percentage = sum(1 for fitness in global_fitnesses if fitness == 1.0) / args.num_runs * 100
