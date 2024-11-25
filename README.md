@@ -21,7 +21,7 @@ pip install networkx matplotlib
 To run the simulation, use the following command:
 
 ```bash
-python simulate_language_evolution.py \
+python main.py \
   --num_nodes <number_of_nodes> \
   --num_edges <number_of_edges> \
   --language_size <size_of_language> \
@@ -46,13 +46,13 @@ python simulate_language_evolution.py \
 1. **Run with default values:**
 
    ```bash
-   python simulate_language_evolution.py
+   python main.py
    ```
 
 2. **Run with 50 nodes, 100 edges, language size of 10, 20 steps, and custom probabilities:**
 
    ```bash
-   python simulate_language_evolution.py --num_nodes 50 --num_edges 100 --language_size 10 --num_steps 20 --edge_add_prob 0.1 --edge_del_prob 0.1 --learning_rate 0.7 --mutation_rate 0.2
+   python main.py --num_nodes 50 --num_edges 100 --language_size 10 --num_steps 20 --edge_add_prob 0.1 --edge_del_prob 0.1 --learning_rate 0.7 --mutation_rate 0.2
    ```
 
 ## Output:

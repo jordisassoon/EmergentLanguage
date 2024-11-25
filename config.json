@@ -1,0 +1,26 @@
+{
+    "simulation": {
+        "edge_add_prob": 0.05,
+        "edge_del_prob": 0.05,
+        "learning_rate": {
+            "upper": 1.0,
+            "lower": 0.05
+        },
+        "language_size": {
+            "min": 5,
+            "max": 20
+        }
+    },
+    "graph": {
+        "community_sizes": [50, 40, 50, 30],
+        "p_matrix": [
+            [0.9, 0.03, 0.05, 0.02],
+            [0.03, 0.9, 0.02, 0.1],
+            [0.05, 0.02, 0.9, 0.03],
+            [0.02, 0.1, 0.03, 0.9]
+        ]
+    },
+    "language": {
+        "symbol_set": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
+    }
+}
